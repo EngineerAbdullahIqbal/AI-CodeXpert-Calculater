@@ -1,155 +1,100 @@
-/* General Styles */
+/* General Calculator Styles */
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
-    background: linear-gradient(135deg, #74ebd5, #acb6e5);
+    background: linear-gradient(135deg, #2C3E50, #FD746C);
     font-family: 'Roboto', sans-serif;
+    margin: 0;
 }
 
-/* Calculator Container */
 .calculator {
-    background: #333;
-    border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    background-color: #1E2A38;
     padding: 20px;
-    width: 320px;
-    animation: fadeIn 1s ease-out; /* Fade-in effect for the calculator */
+    border-radius: 15px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+    width: 300px;
 }
 
-/* Display Area */
 #display {
     width: 100%;
-    height: 60px;
+    height: 50px;
+    background-color: #2C3E50;
+    color: #FFF;
     text-align: right;
+    font-size: 2em;
     padding: 10px;
-    margin-bottom: 15px;
     border: none;
     border-radius: 10px;
-    font-size: 2em;
-    color: #333;
-    background-color: #eee;
-    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.2);
-    animation: pulse 1.5s infinite; /* Pulsing animation for the display area */
-}
-
-/* Button Grid */
-.buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    margin-bottom: 15px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
 /* Button Styles */
-.btn {
-    background: #444;
-    border: none;
-    border-radius: 8px;
+button {
+    width: 60px;
+    height: 60px;
+    background-color: #34495E;
+    color: #FFF;
     font-size: 1.5em;
-    padding: 20px;
-    color: #fff;
-    transition: background 0.3s, box-shadow 0.3s, transform 0.1s; /* Added transform transition */
+    border: none;
+    border-radius: 10px;
+    margin: 5px;
     cursor: pointer;
-    animation: popIn 0.5s ease-out; /* Pop-in animation for buttons */
+    transition: all 0.3s ease;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.btn:hover {
-    background: #555;
+button:hover {
+    background-color: #2ECC71;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-.btn:active {
-    background: #666;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
-    transform: scale(0.95); /* Slightly scale down on click */
+button:active {
+    transform: scale(0.95);
 }
 
-/* Specific Button Styles */
-.btn.clear {
-    background: #e74c3c;
+/* Operator Buttons */
+.operator {
+    background-color: #E74C3C;
 }
 
-.btn.clear:hover {
-    background: #c0392b;
+.operator:hover {
+    background-color: #E67E22;
 }
 
-.btn.clear:active {
-    background: #a93226;
+/* Equal Button */
+/* Equal Button */
+#equals {
+    background-color: #F39C12;
+    grid-column: span 0; /* Spans across 2 columns */
+    grid-row: span 2;    /* Spans across 2 rows */
+    height: 130px;       /* Adjust height to fit two rows */
 }
 
-.btn.operator {
-    background: #3498db;
+
+#equals:hover {
+    background-color: #F1C40F;
 }
 
-.btn.operator:hover {
-    background: #2980b9;
+
+/* Clear Button */
+#clear {
+    background-color: #C0392B;
 }
 
-.btn.operator:active {
-    background: #1f618d;
+#clear:hover {
+    background-color: #E74C3C;
 }
 
-.btn.equal {
-    background: #2ecc71;
-    grid-column: span 4; /* Make sure '=' spans the full width */
+/* Grid Layout for Buttons */
+.calculator div {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    justify-items: center;
 }
 
-.btn.equal:hover {
-    background: #27ae60;
-}
 
-.btn.equal:active {
-    background: #1e8449;
-}
 
-.btn.number {
-    background: #555;
-}
-
-.btn.number:hover {
-    background: #666;
-}
-
-.btn.number:active {
-    background: #777;
-}
-
-.btn.zero {
-    grid-column: span 4; /* Make sure '0' spans the full width */
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes pulse {
-    0% {
-        box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-    50% {
-        box-shadow: inset 0 4px 12px rgba(0, 0, 0, 0.3);
-    }
-    100% {
-        box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-}
-
-@keyframes popIn {
-    from {
-        opacity: 0;
-        transform: scale(1);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1.5s);
-    }
-}

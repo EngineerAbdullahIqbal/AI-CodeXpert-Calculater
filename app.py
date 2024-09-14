@@ -1,15 +1,16 @@
 from flask import Flask, request, jsonify
-from flask_cors import CORS  # Import CORS to handle cross-origin requests
+from flask_cors import CORS
 import math
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for the entire Flask app
 
-@app.route('/calculate', methods=['GET'])
+@app.route('/calculate', methods=['POST'])
 def calculate():
-    first_number = request.args.get('firstNumber')
-    second_number = request.args.get('secondNumber')
-    operator = request.args.get('operator')
+    data = request.json
+    first_number = data.get('firstNumber', '')
+    second_number = data.get('secondNumber', '')
+    operator = data.get('operator', '')
 
     # Debugging logs to trace the inputs
     print(f"Received: first_number={first_number}, second_number={second_number}, operator={operator}")
