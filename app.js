@@ -33,7 +33,7 @@ function calculate(firstNumber, secondNumber, operator) {
     }
 
  // Ensure this URL is updated to your deployed backend server URL
-fetch('https://127.0.0.1:5000/calculate', {
+fetch('https://abdullah-iqbal-01.github.io/AI-CodeXpert-Calculater/', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',
